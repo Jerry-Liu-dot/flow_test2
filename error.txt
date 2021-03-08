@@ -1,0 +1,50 @@
+zhaohanyun@zhaohanyun-desktop:~/Desktop/flow_test/flow_test2$ cmake .
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/zhaohanyun/Desktop/flow_test/flow_test2
+zhaohanyun@zhaohanyun-desktop:~/Desktop/flow_test/flow_test2$ make
+[ 20%] Building CXX object CMakeFiles/cvas.dir/src/car_status.cpp.o
+In file included from /home/zhaohanyun/Desktop/flow_test/flow_test2/include/car_status.hpp:9:0,
+                 from /home/zhaohanyun/Desktop/flow_test/flow_test2/src/car_status.cpp:5:
+/home/zhaohanyun/Desktop/flow_test/flow_test2/include/data.hpp:18:17: error: ‘CvImage’ was not declared in this scope
+     std::vector<CvImage> frames;
+                 ^~~~~~~
+/home/zhaohanyun/Desktop/flow_test/flow_test2/include/data.hpp:18:24: error: template argument 1 is invalid
+     std::vector<CvImage> frames;
+                        ^
+/home/zhaohanyun/Desktop/flow_test/flow_test2/include/data.hpp:18:24: error: template argument 2 is invalid
+/home/zhaohanyun/Desktop/flow_test/flow_test2/include/data.hpp:23:20: error: ‘CvImage’ has not been declared
+     void add_image(CvImage image);
+                    ^~~~~~~
+/home/zhaohanyun/Desktop/flow_test/flow_test2/src/car_status.cpp: In function void car_status(int, std::vector<CarStatusData>&, std::mutex&)’:
+/home/zhaohanyun/Desktop/flow_test/flow_test2/src/car_status.cpp:13:9: warning: function declared ‘noreturn’ has a ‘return’ statement
+         return ;
+         ^~~~~~
+/home/zhaohanyun/Desktop/flow_test/flow_test2/src/car_status.cpp:14:17: error:CV_CAP_PROP_FRAME_WIDTH’ was not declared in this scope
+     capture.set(CV_CAP_PROP_FRAME_WIDTH, 640);
+                 ^~~~~~~~~~~~~~~~~~~~~~~
+/home/zhaohanyun/Desktop/flow_test/flow_test2/src/car_status.cpp:15:17: error:CV_CAP_PROP_FRAME_HEIGHT’ was not declared in this scope
+     capture.set(CV_CAP_PROP_FRAME_HEIGHT, 480);
+                 ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/zhaohanyun/Desktop/flow_test/flow_test2/src/car_status.cpp:16:17: error:CV_CAP_PROP_FPS’ was not declared in this scope
+     capture.set(CV_CAP_PROP_FPS, 10);
+                 ^~~~~~~~~~~~~~~
+/home/zhaohanyun/Desktop/flow_test/flow_test2/src/car_status.cpp:16:17: note: suggested alternative: ‘CV_CPU_POPCNT’
+     capture.set(CV_CAP_PROP_FPS, 10);
+                 ^~~~~~~~~~~~~~~
+                 CV_CPU_POPCNT
+/home/zhaohanyun/Desktop/flow_test/flow_test2/src/car_status.cpp:23:27: error:CV_BGR2GRAY’ was not declared in this scope
+     cvtColor(frame, gray, CV_BGR2GRAY);
+                           ^~~~~~~~~~~
+/home/zhaohanyun/Desktop/flow_test/flow_test2/src/car_status.cpp:29:34: error:motionjudge’ was not declared in this scope
+         newstatus.set_car_status(motionjudge(flow));
+                                  ^~~~~~~~~~~
+/home/zhaohanyun/Desktop/flow_test/flow_test2/src/car_status.cpp:34:1: warning: ‘noreturn’ function does return
+ }
+ ^
+CMakeFiles/cvas.dir/build.make:62: recipe for target 'CMakeFiles/cvas.dir/src/car_status.cpp.o' failed
+make[2]: *** [CMakeFiles/cvas.dir/src/car_status.cpp.o] Error 1
+CMakeFiles/Makefile2:67: recipe for target 'CMakeFiles/cvas.dir/all' failed
+make[1]: *** [CMakeFiles/cvas.dir/all] Error 2
+Makefile:83: recipe for target 'all' failed
+make: *** [all] Error 2
